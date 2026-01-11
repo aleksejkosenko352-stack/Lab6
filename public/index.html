@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Локальна сторінка</title>
+
+  <!-- Додали стилі для візуальних змін -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #1e40af;
+      font-size: 36px; /* було стандартно — тепер значно більше */
+      margin-bottom: 20px;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1d4ed8;
+    }
+
+    #successMessage {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ❗ ЗМІНЕНО ТЕКСТ ЗАГОЛОВКА -->
+  <h1 id="pageTitle">Вітаємо на оновленій локальній сторінці 🚀</h1>
+
+  <!-- Форма логіну -->
+  <form id="loginForm">
+    <input
+      id="username"
+      type="text"
+      placeholder="Логін користувача"
+      required
+    />
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Ваш пароль"
+      required
+    />
+
+    <!-- ❗ МОЖЕШ ТАКОЖ ЗМІНИТИ ID, ЯКЩО ХОЧЕШ ЗЛАМАТИ E2E -->
+    <button id="loginButton" type="submit">Увійти в систему</button>
+  </form>
+
+  <!-- Повідомлення про успіх -->
+  <p id="successMessage" style="display: none; color: green;">
+    ✅ Вхід виконано успішно!
+  </p>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('successMessage').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
